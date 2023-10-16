@@ -9,12 +9,13 @@ export const Mycontext = createContext<{
 } | null>(null);
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [page,setPage] = useState(0);
-  const [val,setVal] = useState("");
+  const [page,setPage] = useState<Number>(0);
+  const [val,setVal] = useState<Object>("");
+  const [p,setp] = useState<Number>(0);
   return (
     
     <ChakraProvider>
-      <Mycontext.Provider value={{page,setPage,setVal,val}}>
+      <Mycontext.Provider value={{p,page,setPage,setVal,val}}>
       <Component {...pageProps} />
       </Mycontext.Provider>
     </ChakraProvider>
